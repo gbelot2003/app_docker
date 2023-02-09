@@ -8,6 +8,17 @@ services:
       - backend
     ports:
       - "3000:3000"
+  
+    mongodb:
+      image: 'mongo'
+      restart: always
+      container_name: mongo-docker
+      volumes:
+        - 'data:/data/db'
+      env_file:
+        - './env/mongo.env'
+      ports:
+        - "27017:27017"
 
 networks:
   backend:
