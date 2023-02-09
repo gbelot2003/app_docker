@@ -2,17 +2,12 @@ version: '3'
 services:
   api:
     image: sample-express-app
-    build: .
+    build: 
+      dockerfile: ./dockerfiles/node/Dockerfile
     networks:
       - backend
     ports:
       - "3000:3000"
-
-  web-cli:
-    image: sample-express-app
-    networks:
-      - backend
-    command: sh
 
 networks:
   backend:
