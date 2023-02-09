@@ -1,6 +1,6 @@
 version: '3'
 services:
-  api:
+  node:
     image: sample-express-app
     build:
       dockerfile: ./dockerfiles/node/Dockerfile
@@ -8,8 +8,6 @@ services:
       - backend
     ports:
       - "3000:3000"
-    depends_on:
-      - mongodb
 
   mongodb:
     image: 'mongo'

@@ -1,10 +1,10 @@
 FROM node:11-alpine
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/app
 
-WORKDIR /usr/src/app
+ADD /src /usr/app
 
-COPY . .
+WORKDIR /usr/app/src
 
 RUN npm install
 
